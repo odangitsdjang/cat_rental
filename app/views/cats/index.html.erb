@@ -1,0 +1,47 @@
+<table>
+  <tr>
+    <td><h1>All Cats</h1></td>
+  </tr>
+
+  <% count = 0 %>
+  <% while count < @cats.length %>
+    <% if count%3 == 0 %>
+    <tr>
+    <% end %>
+      <td>
+
+        <% if count%3 == 0 %>
+
+        <% unless @cats[count].nil? %>
+        <%= render "display", cat: @cats[count], page: "home" %>
+        <%= link_to "Show Cat", cat_url(@cats[count]) %>
+        <% end %>
+        <% count+=1 %>
+        <% end %>
+      </td>
+      <td>
+        <%# byebug %>
+        <% if count%3 == 1 %>
+        <% unless @cats[count].nil? %>
+        <%= render "display", cat: @cats[count], page: "home" %>
+        <%= link_to "Show Cat", cat_url(@cats[count]) %>
+        <% end %>
+        <% count+=1 %>
+        <% end %>
+      </td>
+      <td>
+        <%# byebug %>
+        <% if count%3 == 2 %>
+        <%# @cats[count] = Cat.new if @cats[count].nil? %>
+        <% unless @cats[count].nil? %>
+        <%= render "display", cat: @cats[count], page: "home" %>
+        <%= link_to "Show Cat", cat_url(@cats[count]) %>
+        <% end %>
+        <% count+=1 %>
+        <% end %>
+      </td>
+    <% if count%3 == 0  || count == @cats.length%>
+    </tr>
+    <% end %>
+  <% end %>
+</table>

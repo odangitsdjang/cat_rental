@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>NinetyNineCats</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <a href="<%= cats_url %>"><img src="http://cdn.shopify.com/s/files/1/1061/1924/products/Tear_Cat_Emoji_Icon_68bed4a3-40ae-43ab-b4fd-d3f481d02434_grande.png?v=1485573512" alt="cat logo"></a>
+        <a href="<%= new_cat_rental_request_url %>"> <h4>Cat Rentals</h4> </a>
+      </nav>
+    </header>
+
+    <%= yield %>
+  </body>
+</html>
